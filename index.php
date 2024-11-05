@@ -1,10 +1,28 @@
 <?php
-include_once("header.php")
+include_once("header.php");
 ?>
 
+<main>
+    <div id="title-container">
+        <h1>Blog Codar</h1>
+        <p>O seu blog de programação </p>
+    </div>
 
-<h1>Hello Word</h1>
+    <div id="posts-container">
+        <?php foreach ($posts as $post): ?>
+            <div class="post-box">
+                <img src="<?= $BASE_URL ?>/img/<?= $post['img'] ?>" alt="<?= $post['title'] ?>">
+                <h2 class="post-title">
+                    <a href="<?= $BASE_URL ?>post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a>
+                </h2>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</main>
+
+
+
 
 <?php
-include_once("footer.php")
+include_once("footer.php");
 ?>
